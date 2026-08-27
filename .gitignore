@@ -1,0 +1,5 @@
+# The generated pages are copied in from the project root; nothing here is
+# build output that needs ignoring beyond editor/OS junk.
+.DS_Store
+.idea/
+.vscode/
