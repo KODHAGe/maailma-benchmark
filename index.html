@@ -1,6 +1,6 @@
 <!doctype html><html lang=en><head><meta charset=utf-8>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>maailma — news-source benchmark</title>
+<title>maailma — world news digest & benchmark</title>
 <style>
 body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;margin:3rem auto;max-width:52rem;padding:0 1.5rem;color:#1a1a1a;line-height:1.6}
 h1{font-size:1.8rem;margin-bottom:.3rem}
@@ -14,7 +14,14 @@ a.cardlink:hover{text-decoration:underline}
 code{background:#f2f2f4;padding:.1rem .3rem;border-radius:3px;font-size:.85em}
 </style></head><body>
 <h1>maailma</h1>
-<p class=tagline>Country-by-country ranking of online news sources, benchmarked against the Reuters Institute Digital News Report reference set.</p>
+<p class=tagline>A world-news digest built from ranked outlets per country, plus the underlying source benchmark against the Reuters Institute Digital News Report.</p>
+
+<div class=card>
+<h2>World news digest</h2>
+<p>The daily digest: stories from the top outlets across ~200 countries, grouped by region, with status (new today / ongoing / winding down), what changed since yesterday, and ranked links to the original outlets.</p>
+<a class=cardlink href="digest.html">Open today's digest →</a>
+<p style="margin-top:.4rem;font-size:.82rem">Agent-readable: <code>digest.json</code> · per-date copies in <code>digests/</code></p>
+</div>
 
 <div class=card>
 <h2>Benchmark table</h2>
@@ -29,7 +36,7 @@ code{background:#f2f2f4;padding:.1rem .3rem;border-radius:3px;font-size:.85em}
 </div>
 
 <div class=meta>
-Generated from <code>data/sources.csv</code> by the maailma pipeline. Reference: Reuters Institute Digital News Report top online brands (<code>tests/fixtures/dnr_ground_truth.json</code>).<br>
-Regenerate with <code>python -m tests.benchmark_analysis</code>, <code>python -m tests.render_benchmark</code>, <code>python -m scripts.analysis_report</code>.
+Digest from <code>data/news.db</code> (feed metadata + pipeline summaries only, links out — no article content reproduced). Benchmark from <code>data/sources.csv</code>, reference: Reuters Institute DNR (<code>tests/fixtures/dnr_ground_truth.json</code>).<br>
+Regenerate: <code>python -m scripts.news_site</code> · <code>python -m tests.benchmark_analysis</code> · <code>python -m tests.render_benchmark</code> · <code>python -m scripts.analysis_report</code>.
 </div>
 </body></html>
